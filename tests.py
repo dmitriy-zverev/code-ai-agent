@@ -1,6 +1,7 @@
 from functions.get_files_info import get_files_info
 from functions.get_file_content import get_file_content
 from functions.write_file import write_file
+from functions.run_python import run_python_file
 
 def test_get_files_info():
     print("Result for current directory:")
@@ -49,5 +50,26 @@ def test_write_file():
     print(write_file("calculator", "/tmp/temp.txt", "this should not be allowed"))
     print()
 
+def test_run_python_file():
+    print("Running 'main.py' in 'calculator' directory:")
+    print(run_python_file("calculator", "main.py"))
+    print()
+
+    print("Running 'main.py' in 'calculator' directory with arguments ['3 + 5']:")
+    print(run_python_file("calculator", "main.py", ["3 + 5"]))
+    print()
+
+    print("Running 'tests.py' in 'calculator' directory:")
+    print(run_python_file("calculator", "tests.py"))
+    print()
+
+    print("Running '../main.py' in 'calculator' directory:")
+    print(run_python_file("calculator", "../main.py"))
+    print()
+
+    print("Running 'nonexistent.py' in 'calculator' directory:")
+    print(run_python_file("calculator", "nonexistent.py"))
+    print()
+
 if __name__ == "__main__":
-    test_write_file()
+    test_run_python_file()
