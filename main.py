@@ -13,6 +13,7 @@ def main():
         print("Code AI Agent")
         print("Usage: uv run main.py <your_prompt>")
         print("Example: uv run main.py \"How to build a calculator app?\"")
+        print("Use --verbose for detailed output.")
         sys.exit(1)
     
     verbose = "--verbose" in args
