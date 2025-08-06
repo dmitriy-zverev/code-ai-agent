@@ -1,5 +1,6 @@
 from functions.get_files_info import get_files_info
 from functions.get_file_content import get_file_content
+from functions.write_file import write_file
 
 def test_get_files_info():
     print("Result for current directory:")
@@ -35,5 +36,18 @@ def test_get_file_content():
     print(get_file_content("calculator", "pkg/does_not_exist.txt"))
     print()
 
+def test_write_file():
+    print("Writing to 'lorem.txt':")
+    print(write_file("calculator", "lorem.txt", "wait, this isn't lorem ipsum"))
+    print()
+
+    print("Writing to 'pkg/morelorem.txt':")
+    print(write_file("calculator", "pkg/morelorem.txt", "lorem ipsum dolor sit amet"))
+    print()
+
+    print("Attempting to write outside working directory:")
+    print(write_file("calculator", "/tmp/temp.txt", "this should not be allowed"))
+    print()
+
 if __name__ == "__main__":
-    test_get_file_content()
+    test_write_file()
