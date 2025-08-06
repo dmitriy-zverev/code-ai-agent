@@ -15,6 +15,8 @@ The program  is a CLI tool that:
 For example, I have a buggy calculator app, so I used my agent to fix the code:
 ```
 > uv run main.py "fix my calculator app, its not starting correctly"
+```
+```
 # Calling function: get_files_info
 # Calling function: get_file_content
 # Calling function: write_file
