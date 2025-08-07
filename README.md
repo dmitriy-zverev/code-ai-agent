@@ -31,3 +31,4 @@ Output:
 ## Prerequisites
 * Python 3.10+ installed
 * uv project and package manager
+* Be really cautious running this program
