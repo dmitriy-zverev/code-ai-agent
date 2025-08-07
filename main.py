@@ -7,6 +7,7 @@ from functions.get_file_content import schema_get_file_content, get_file_content
 from functions.get_files_info import schema_get_files_info, get_files_info
 from functions.run_python import schema_run_python_file, run_python_file
 from functions.write_file import schema_write_file, write_file
+from functions.call_function import call_function
 
 def main():
     load_dotenv()
@@ -80,11 +81,12 @@ def generate_content(client, messages, system_prompt, available_functions, user_
         print(f"Prompt tokens: {response.usage_metadata.prompt_token_count}")
         print(f"Response tokens: {response.usage_metadata.candidates_token_count}")
     
-    function_calls = response.function_calls
+    function_call_result = call_function(response.function_calls, verbose=verbose)
+    
+    if not function_call_result.parts[0].function_response.response:
+        raise Exception("Error: function call result is empty.")
 
-    print(f"Calling function: {function_calls[0].name}({function_calls[0].args})")
-    print("\nResponse:")
-    print(response.text)
+    print(f"-> {function_call_result.parts[0].function_response.response["function_result"]}")
 
 
 if __name__ == "__main__":
