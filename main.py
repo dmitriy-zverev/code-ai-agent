@@ -5,7 +5,7 @@ from google import genai
 from google.genai import types
 from functions.get_file_content import schema_get_file_content, get_file_content
 from functions.get_files_info import schema_get_files_info, get_files_info
-from functions.run_python import schema_run_python, run_python_file
+from functions.run_python import schema_run_python_file, run_python_file
 from functions.write_file import schema_write_file, write_file
 
 def main():
@@ -35,6 +35,9 @@ def main():
     When a user asks a question or makes a request, make a function call plan. You can perform the following operations:
 
     - List files and directories
+    - Read file contents
+    - Execute Python files with optional arguments
+    - Write or overwrite files
 
     All paths you provide should be relative to the working directory. You do not need to specify the working directory in your function calls as it is automatically injected for security reasons.
     """
@@ -43,7 +46,7 @@ def main():
         function_declarations=[
             schema_get_file_content,
             schema_get_files_info,
-            schema_run_python,
+            schema_run_python_file,
             schema_write_file
         ]
     )

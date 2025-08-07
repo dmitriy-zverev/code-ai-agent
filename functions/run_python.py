@@ -2,8 +2,8 @@ import os
 import subprocess
 from google.genai import types
 
-schema_run_python = types.FunctionDeclaration(
-    name="run_python",
+schema_run_python_file = types.FunctionDeclaration(
+    name="run_python_file",
     description="Executes a Python file in the specified working directory with optional arguments.",
     parameters=types.Schema(
         type=types.Type.OBJECT,
