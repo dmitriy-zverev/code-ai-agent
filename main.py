@@ -89,16 +89,23 @@ def generate_content(client, messages, available_functions, verbose=False):
         return response
 
     for function_call in response.function_calls:
-        if function_call:
-            function_responses.append(
-                call_function(function_call, verbose=verbose)
-            )
+        function_call_result = call_function(function_call, verbose=verbose)
 
-    for func_response in function_responses:
-        if func_response:
-            messages.append(func_response)
+        if (
+            not function_call_result.parts
+            or not function_call_result.parts[0].function_response
+        ):
+            raise Exception("empty function call result")
+        if verbose:
+            print(f"-> {function_call_result.parts[0].function_response.response}")
 
-    if not function_responses[0]:
+        function_responses.append(
+            function_call_result.parts[0]
+        )
+
+    messages.append(types.Content(role="tool", parts=function_responses))
+    
+    if not function_responses:
         raise Exception("Error: function call result is empty.")
 
     final_response = client.models.generate_content(
