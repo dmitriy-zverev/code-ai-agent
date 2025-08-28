@@ -32,6 +32,4 @@ Output:
 * Python 3.10+ installed
 * uv project and package manager
 * Be really cautious running this program
-
-## Certificate for completing the project
-<img width="2080" height="1270" alt="bootdev_certificate" src="https://github.com/user-attachments/assets/ffcc0b9c-d641-4fec-933b-f0e744ecbe7e" />
+  
