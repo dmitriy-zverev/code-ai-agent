@@ -101,7 +101,56 @@ Code AI Agent: Great! The calculator app now seems to be working correctly.
 The output shows the expression and the result in a formatted way.
 ```
 
-## Prerequisites
-* Python 3.10+ installed
-* uv project and package manager
-* Be really cautious running this program
+## Available Functions
+
+CodeWhisperer has access to these powerful functions:
+
+| Function | Purpose |
+|----------|---------|
+| `get_files_info` | Scans directory structure and file information |
+| `get_file_content` | Reads and analyzes file contents |
+| `write_file` | Creates or modifies files with fixes |
+| `run_python_file` | Executes Python scripts to test functionality |
+
+## Contributing
+
+We welcome contributions! Here's how you can help:
+
+### Getting Started
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes
+4. Add tests if applicable
+5. Commit your changes: `git commit -m 'Add amazing feature'`
+6. Push to the branch: `git push origin feature/amazing-feature`
+7. Open a Pull Request
+
+### Development Setup
+```bash
+# Clone your fork
+git clone https://github.com/your-username/code-ai-agent.git
+cd code-ai-agent
+
+# Install development dependencies
+uv sync
+
+# Run tests
+uv run python tests.py
+```
+
+### Areas for Contribution
+- **New Functions**: Add more capabilities (file operations, git commands, etc.)
+- **Language Support**: Extend beyond Python to other programming languages
+- **Error Handling**: Improve robustness and error messages
+- **Documentation**: Help improve examples and guides
+- **Testing**: Add comprehensive test coverage
+
+### Code Style
+- Follow PEP 8 for Python code
+- Add docstrings to new functions
+- Include type hints where appropriate
+- Write clear, descriptive commit messages
+
+---
+
+**⚠️ Important:** Be cautious when running CodeWhisperer as it can modify your files. Always use version control and test in a safe environment first.
