@@ -1,4 +1,4 @@
-# CodeWhisperer 🤖
+# CodeWhisperer
 
 An autonomous AI coding assistant that understands your problems and fixes your code without you lifting a finger.
 
@@ -6,7 +6,7 @@ An autonomous AI coding assistant that understands your problems and fixes your 
 
 CodeWhisperer is an intelligent CLI tool that acts as your personal coding companion. Simply describe what's wrong with your code in plain English (even with emojis!), and watch as it autonomously navigates your project, identifies issues, and implements fixes. Think of it as having a senior developer who never sleeps, never gets tired, and always knows exactly what to do.
 
-## Why? 🤔
+## Why?
 
 **The Problem:** Debugging and fixing code can be time-consuming and frustrating. You know something's broken, but finding the root cause and implementing the right fix often involves:
 - Manually scanning through multiple files
